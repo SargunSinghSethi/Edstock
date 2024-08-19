@@ -1,0 +1,2 @@
+# Edstock
+Inventory Management System
