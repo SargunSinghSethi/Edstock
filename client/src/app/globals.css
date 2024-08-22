@@ -27,6 +27,6 @@ body,
 
 @media (min-width: 1280px) {
   .custom-grid-rows {
-    grid-template-rows: repeat(8, 7.5vh);
+    grid-template-rows: repeat(8, 9vh);
   }
 }

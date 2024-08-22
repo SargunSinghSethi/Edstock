@@ -42,7 +42,7 @@ const CardSalesSummary = () => {
   }
 
   return (
-    <div className="row-span-4 xl:row-span-7 bg-white shadow-md rounded-2xl flex flex-col justify-between">
+    <div className="row-span-3 xl:row-span-6 bg-white shadow-md rounded-2xl flex flex-col justify-between">
       {isLoading ? (
         <div className="m-5">Loading...</div>
       ) : (
@@ -92,15 +92,12 @@ const CardSalesSummary = () => {
                 margin={{ top: 0, right: 0, left: -25, bottom: 0 }}
               >
                 <CartesianGrid strokeDasharray="" vertical={false} />
-                <XAxis
-                  dataKey="date"
-                  tickFormatter={(value) => {
+                <XAxis dataKey="date" tickFormatter={(value) => {
                     const date = new Date(value);
                     return `${date.getMonth() + 1}/${date.getDate()}`;
                   }}
                 />
-                <YAxis
-                  tickFormatter={(value) => {
+                <YAxis tickFormatter={(value) => {
                     return `$${(value / 1000000).toFixed(0)}m`;
                   }}
                   tick={{ fontSize: 12, dx: -1 }}
@@ -131,7 +128,7 @@ const CardSalesSummary = () => {
           </div>
 
           {/* FOOTER */}
-          <div className="mb-4">
+          <div>
             <hr />
             <div className="flex justify-between items-center mt-6 text-sm px-7 mb-4">
               <p>{salesData.length || 0} days</p>
