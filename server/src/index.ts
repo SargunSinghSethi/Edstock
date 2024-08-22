@@ -6,6 +6,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 // ROUTE IMPORTS
 import dashboardRoutes from "./routes/dashboardRoutes";
+import productRoutes from "./routes/productRoutes";
 
 // CONFIGURATIONS
 
@@ -22,6 +23,7 @@ app.use(cors());
 /* ROUTES */
 
 app.use("/dashboard",dashboardRoutes);
+app.use("/dashboard",productRoutes);
 
 /* Server */
 const port = process.env.PORT || 3001;
