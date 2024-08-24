@@ -7,6 +7,7 @@ import Header from "@/app/(components)/Header";
 import Rating from "@/app/(components)/Rating";
 import CreateProductModal from "./CreateProductModal";
 import useDebounce from "@/app/(hooks)/debounce";
+import Image from "next/image";
 
 type ProductFormData = {
     name: string;
@@ -73,7 +74,14 @@ const Products = () => {
                     products?.map((product) => (
                         <div key={product.productId} className="border shadow rounded-md p-4 max-w-full w-full mx-auto">
                             <div className="flex flex-col items-center">
-                                img
+                                <Image
+                                    src={`https://s-inventory.s3.ap-south-1.amazonaws.com/product${
+                                        Math.floor(Math.random() * 3) + 1}.png`}
+                                    alt={product.name}
+                                    width={150}
+                                    height={150}
+                                    className="mb-3 rounded-2xl w-36 h-36"
+                                />
                                 <h3 className="text-lg text-gray-900 font-semibold">
                                     {product.name}
                                 </h3>
