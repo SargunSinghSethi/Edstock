@@ -39,13 +39,16 @@ Here are some screenshots of the Edstock application:
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/yourusername/edstock.git
+    git clone https://github.com/SargunSinghSethi/Edstock.git
     cd edstock
     ```
 
-2. **Install dependencies:**
+2. **Install dependencies in both client and server directory:**
 
     ```bash
+    cd client
+    npm install
+    cd ../server
     npm install
     ```
 
