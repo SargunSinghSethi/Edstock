@@ -24,11 +24,12 @@ Welcome to **Edstock**, a robust and scalable inventory management system design
 
 Here are some screenshots of the Edstock application:
 
-![Dashboard Screenshot](path_to_image/dashboard.png)
-
-*Dashboard showing inventory levels and recent activity.*
-
-![Inventory Management Screenshot](path_to_image/inventory-management.png)
+![Dashboard Screenshot](images/dashboard.png)
+![Dashboard Screenshot](images/dashboard_dark.png)
+![InventoryScreenshot](images/inventory.png)
+![InventoryScreenshot](images/products.png)
+![InventoryScreenshot](images/expenses.png)
+![InventoryScreenshot](images/settings.png)
 
 *Managing inventory with detailed product information and stock levels.*
 
