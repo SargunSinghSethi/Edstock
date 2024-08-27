@@ -61,7 +61,7 @@ const Settings = () => {
                       type="checkbox"
                       className="sr-only peer"
                       checked={setting.label == "Notification" ? setting.value as boolean : isDarkMode as boolean}
-                      onChange={setting.label == "Notification" ? () => handleToggleChange(index) : toggleDarkMode}
+                      onChange={setting.label == "Notification" ? () => handleNotificationToggleChange(index) : toggleDarkMode}
                     />
                       <div
                         className="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-blue-400 peer-focus:ring-4 
