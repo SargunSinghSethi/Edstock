@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import Header from "@/app/(components)/Header";
+import { useAppDispatch, useAppSelector } from "@/app/redux";
+import { setIsDarkMode } from "@/state";
 
 type UserSetting = {
   label: string;
@@ -20,11 +22,18 @@ const mockSettings: UserSetting[] = [
 const Settings = () => {
   const [userSettings, setUserSettings] = useState<UserSetting[]>(mockSettings);
 
+  const dispatch = useAppDispatch();
+  const isDarkMode = useAppSelector((state) => state.global.isDarkMode);
+
   const handleToggleChange = (index: number) => {
     const settingsCopy = [...userSettings];
     settingsCopy[index].value = !settingsCopy[index].value as boolean;
     setUserSettings(settingsCopy);
   };
+
+  const toggleDarkMode = () => {
+    dispatch(setIsDarkMode(!isDarkMode));
+  }
 
   return (
     <div className="w-full">
@@ -51,8 +60,8 @@ const Settings = () => {
                       <input
                         type="checkbox"
                         className="sr-only peer"
-                        checked={setting.value as boolean}
-                        onChange={() => handleToggleChange(index)}
+                        checked={isDarkMode as boolean}
+                        onChange={toggleDarkMode}
                       />
                       <div
                         className="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-blue-400 peer-focus:ring-4 
