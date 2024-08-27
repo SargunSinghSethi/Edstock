@@ -25,7 +25,7 @@ const Settings = () => {
   const dispatch = useAppDispatch();
   const isDarkMode = useAppSelector((state) => state.global.isDarkMode);
 
-  const handleToggleChange = (index: number) => {
+  const handleNotificationToggleChange = (index: number) => {
     const settingsCopy = [...userSettings];
     settingsCopy[index].value = !settingsCopy[index].value as boolean;
     setUserSettings(settingsCopy);
@@ -58,11 +58,11 @@ const Settings = () => {
                   {setting.type === "toggle" ? (
                     <label className="inline-flex relative items-center cursor-pointer">
                       <input
-                        type="checkbox"
-                        className="sr-only peer"
-                        checked={isDarkMode as boolean}
-                        onChange={toggleDarkMode}
-                      />
+                      type="checkbox"
+                      className="sr-only peer"
+                      checked={setting.label == "Notification" ? setting.value as boolean : isDarkMode as boolean}
+                      onChange={setting.label == "Notification" ? () => handleToggleChange(index) : toggleDarkMode}
+                    />
                       <div
                         className="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-blue-400 peer-focus:ring-4 
                         transition peer-checked:after:translate-x-full peer-checked:after:border-white 
